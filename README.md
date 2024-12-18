@@ -1,50 +1,31 @@
-# React + TypeScript + Vite
+# 🇩🇰 - Mads Villadsen - Portfolio 🌟
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Dette projekt er en personlig portefølje, der viser mine færdigheder og projekter som softwareingeniørstuderende på 4. semester ved Aarhus Universitet. Det er bygget med React, TypeScript og TailwindCSS. 💻
 
-Currently, two official plugins are available:
+## Formål 🎯
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Formålet med denne portefølje er at præsentere mine projekter, værktøjer og erfaringer inden for softwareudvikling. Den giver også en platform for potentielle arbejdsgivere og samarbejdspartnere til at lære mere om mine færdigheder og baggrund.
 
-## Expanding the ESLint configuration
+## Funktioner ✨
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- **Responsiv design**: Porteføljen er designet til at fungere på forskellige enheder og skærmstørrelser. 📱💻
+- **Interaktive sektioner**: Inkluderer sektioner for om mig, mine projekter, værktøjer og erfaring. 🔍
+- **TypeScript support**: Giver bedre typekontrol og fejlfindingsmuligheder. 🛠️
+- **Projekter:** Få et overblik over forskellige projekter med både billeder, videor, og dokumentationsdokumenter. 📂
+- **Animationer**: Bruger CSS-animationer for at forbedre brugeroplevelsen. 🎨
 
-- Configure the top-level `parserOptions` property like this:
+# 🇺🇸 - Mads Villadsen - Portfolio 🌟
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+This project is a personal portfolio showcasing my skills and projects as a software engineering student in the 4th semester at Aarhus University. It is built with React, TypeScript, and TailwindCSS. 💻
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## Purpose 🎯
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+The purpose of this portfolio is to present my projects, tools, and experiences in software development. It also provides a platform for potential employers and collaborators to learn more about my skills and background.
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+## Features ✨
+
+- **Responsive Design**: The portfolio is designed to work on various devices and screen sizes. 📱💻
+- **Interactive Sections**: Includes sections for about me, my projects, tools, and experience. 🔍
+- **TypeScript Support**: Provides better type checking and debugging capabilities. 🛠️
+- **Projects**: Get an overview of various projects with images, videos, and documentation files. 📂
+- **Animations**: Utilizes CSS animations to enhance the user experience. 🎨

@@ -54,6 +54,7 @@ interface Project {
   images: string[];
   languages: string[];
   pdf?: string;
+  github?: string;
 }
 
 // ProjectsProps interface
@@ -74,6 +75,7 @@ const projectsData: Project[] = [
     },
     images: [portfolio1, portfolio2, portfolio3, portfolio4, portfolio5],
     languages: [ 'react', 'typescript', 'css', ],
+    github: 'https://github.com/Ditz3n/Portfolio-1.0',
   },
   {
     title: {

@@ -10,6 +10,7 @@ interface Project {
   images: string[];
   languages: string[];
   pdf?: string;
+  github?: string;
 }
 
 interface ProjectModalProps {
@@ -315,6 +316,17 @@ const ProjectModal: React.FC<ProjectModalProps> = ({
                   onClick={() => window.open(selectedProject.pdf, '_blank')}
                 >
                   <DocumentTextIcon className="w-5 h-[28px] mx-2" />
+                </button>
+              </div>
+            )}
+            {selectedProject.github && (
+              <div className="p-[2px] bg-gradient-to-r from-[#77a1d3] via-[#79cbca] to-[#e684ae] dark:from-[#FF4E50] dark:to-[#F9D423] rounded-md">
+                <button
+                  className="shadow-sm px-4 py-2.5 rounded bg-gray-50 dark:bg-[#222222] text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-[#272727] transition-colors duration-200 flex items-center"
+                  onClick={() => window.open(selectedProject.github, '_blank')}
+                >
+                  <DocumentTextIcon className="w-5 h-[24px] mx-2" />
+
                 </button>
               </div>
             )}

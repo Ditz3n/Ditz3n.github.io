@@ -16,7 +16,7 @@ export default function About() {
             {language === 'da' ? (
               <>
                 <p>
-                  Hej! Jeg hedder Mads. Jeg er i øjeblikket softwareingeniørstuderende på Aarhus Universitet, 
+                  Hej! Jeg hedder Mads. Jeg er i øjeblikket en 22-årig softwareingeniørstuderende på Aarhus Universitet, 
                   hvor jeg specialiserer mig i webudvikling og softwarearkitektur.
                 </p>
                 <p>
@@ -35,7 +35,7 @@ export default function About() {
             ) : (
               <>
                 <p>
-                  Hi! I'm Mads. I'm currently a software engineering student at Aarhus University, 
+                  Hi! I'm Mads. I'm currently a 22-year-old software engineering student at Aarhus University, 
                   specializing in web development and software architecture.
                 </p>
                 <p>
