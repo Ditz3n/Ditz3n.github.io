@@ -1,0 +1,178 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-color: #212529;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (max-width: 640px) {
+  .modal-image {
+    width: 100%; /* Gør billederne responsive */
+    height: auto; /* Bevarer billedforholdet */
+  }
+}
+
+.animate-hover {
+  transform: scale(1.05);
+  transition: transform 0.2s;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.fade {
+  display: inline-block;
+  animation: blink 1s infinite;
+  color: #e684ae;
+}
+
+/* Animateret gradient kant til billeder og modal */
+.animated-gradient-border {
+  position: relative;
+  display: inline-block;
+  border-radius: 17px;
+  border: 5px solid transparent;
+  background: linear-gradient(#131219, #131219) padding-box, 
+              linear-gradient(var(--angle), #77a1d3, #79cbca, #e684ae) border-box;
+  animation: rotate 8s linear infinite;
+  z-index: -1;
+}
+
+@keyframes rotate {
+  to {
+    --angle: 360deg;
+  }
+}
+
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+:root {
+  --light-color: #F9D423;
+  --dark-color: #FF4E50;
+}
+
+@media (prefers-color-scheme: dark) {
+  .animated-gradient-border {
+    background: linear-gradient(#131219, #131219) padding-box, 
+                linear-gradient(var(--angle), var(--light-color), var(--dark-color)) border-box;
+  }
+}
+
+.animate-gradient {
+  background-size: 300%;
+  -webkit-animation: animatedgradient 6s ease infinite alternate;
+  -moz-animation: animatedgradient 6s ease infinite alternate;
+  animation: animatedgradient 6s ease infinite alternate;
+}
+
+@keyframes animatedgradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Scrollbar styling for light- & dark mode */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #555;
+  border-radius: 4px;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #333;
+}
+
+.gradient-border {
+  position: relative;
+}
+
+.gradient-border::before {
+  content: '';
+  position: absolute;
+  top: -1px; /* Juster for at dække grænsen */
+  left: 10px; /* Juster for at dække grænsen */
+  right: -1px; /* Juster for at dække grænsen */
+  bottom: -1px; /* Juster for at dække grænsen */
+  background: linear-gradient(to right, #77a1d3, #79cbca, #e684ae); /* Gradient farver */
+  z-index: -1; /* Sørg for, at det er bagved indholdet */
+  border-radius: inherit; /* Behold den samme runding som den overordnede div */
+}
+
+.semester-enter {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+}
+.semester-enter-active {
+  max-height: 1000px; /* Adjust as needed */
+  opacity: 1;
+  transition: max-height 500ms ease-in-out, opacity 500ms ease-in-out;
+}
+.semester-exit {
+  max-height: 1000px; /* Adjust as needed */
+  opacity: 1;
+}
+.semester-exit-active {
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 300ms ease-in-out, opacity 300ms ease-in-out;
+}
