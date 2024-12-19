@@ -1,6 +1,6 @@
 // Projects | This component is used to display the different projects I have worked on
 // useLanguage.ts to manage English or Danish language
-import { useLanguage } from '../../context/LanguageContext'
+import { useLanguage } from '../../hooks/useLanguage'
 
 // Projects.ts to display the different projects
 import { projectsData } from '../ProjectsData'

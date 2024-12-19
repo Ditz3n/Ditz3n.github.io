@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 
 // Importing useLanguage and AnimatedText from the context and components folders used for managing the language and animating the text
-import { useLanguage } from '../../context/LanguageContext';
+import { useLanguage } from '../../hooks/useLanguage';
 import AnimatedText from '../AnimatedText';
 
 // Home component

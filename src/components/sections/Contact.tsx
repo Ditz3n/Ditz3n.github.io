@@ -1,6 +1,6 @@
 // Contact | This component is used to display the contact information of the website
 // Importing the useLanguage hook to manage the language state
-import { useLanguage } from '../../context/LanguageContext'
+import { useLanguage } from '../../hooks/useLanguage'
 
 const Contact = () => {
   const { language } = useLanguage()

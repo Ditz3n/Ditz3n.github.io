@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+// eslint-disable-next-line no-undef
 module.exports = {
   content: [
     "./index.html",
@@ -20,7 +21,6 @@ module.exports = {
         },
       },
       animation: {
-        fade: 'fade 0.3s ease-in-out',
         'gradient-rotation': 'gradientRotate 10s linear infinite',
       },
       textShadow: {
@@ -49,4 +49,4 @@ module.exports = {
       )
     },
   ],
-} 
+}

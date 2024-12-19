@@ -1,7 +1,7 @@
 // ProjectModal | This component is used to display the details of a project when a project is clicked on
 // Importing useLanguage and useTheme hooks from the LanguageContext and ThemeContext, which are used to manage the language and theme of the website
-import { useLanguage } from '../../context/LanguageContext';
-import { useTheme } from '../../context/ThemeContext';
+import { useLanguage } from '../../hooks/useLanguage';
+import { useTheme } from '../../hooks/useTheme';
 
 // Impoting the data for the languages and tools, and a "missing image" image for when an image is not found
 import { languageData } from '../LanguagesData';
@@ -108,10 +108,10 @@ const MediaWrapper: React.FC<{
 
       return () => clearTimeout(fadeTimer);
     }
-  }, [src, type]);
+  }, [src, type, currentSrc]);
 
   return (
-    <div className="relative w-full h-[350px] rounded-xl overflow-hidden">
+    <div className="relative w-full aspect-[4/3] rounded-xl overflow-hidden">
       <div
         className={`absolute inset-0 transition-opacity duration-300 z-10 ${isFading ? 'opacity-100' : 'opacity-0'}`}
         style={{ backgroundColor: isDarkMode ? '#1a1a1a' : '#ffffff' }}
@@ -120,19 +120,17 @@ const MediaWrapper: React.FC<{
         <img
           src={currentSrc}
           alt={alt}
-          className={`w-full h-full object-cover transition-opacity duration-300 cursor-pointer ${isLoaded ? 'opacity-100' : 'opacity-0'}`}
+          className={`w-full h-full object-contain transition-opacity duration-300 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}
           onLoad={() => setIsLoaded(true)}
           loading="eager"
-          style={{ aspectRatio: '4/3' }}
         />
       ) : (
         <video
           ref={videoRef}
           src={currentSrc}
-          className="w-full h-full object-cover cursor-pointer"
+          className="w-full h-full object-contain"
           playsInline
           autoPlay={autoPlay}
-          style={{ aspectRatio: '4/3' }}
           onEnded={onEnded}
         />
       )}
@@ -155,7 +153,6 @@ const ProjectModal: React.FC<ProjectModalProps> = ({
   const { language } = useLanguage();
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [isClosing, setIsClosing] = useState(false);
-  const [isVideoPlaying, setIsVideoPlaying] = useState(false);
   const [hasPausedForVideo, setHasPausedForVideo] = useState(false);
 
   // Function to close the modal
@@ -180,13 +177,12 @@ const ProjectModal: React.FC<ProjectModalProps> = ({
   }, [isPaused, setCurrentImageIndex, togglePause]);
 
   // Function to handle the video ending
-  const handleVideoEnd = () => {
-    setIsVideoPlaying(false);
+  const handleVideoEnd = useCallback(() => {
     togglePause();
-  };
+  }, [togglePause]);
 
   // Functions to handle the left arrow button in the modal to go to the previous image or video
-  const handlePrev = () => {
+  const handlePrev = useCallback(() => {
     if (selectedProject) {
       const newIndex = currentImageIndex > 0 ? currentImageIndex - 1 : selectedProject.images.length - 1;
       setCurrentImageIndex(newIndex);
@@ -194,10 +190,11 @@ const ProjectModal: React.FC<ProjectModalProps> = ({
         togglePause();
       }
     }
-  };
+  }, [selectedProject, currentImageIndex, isPaused, setCurrentImageIndex, togglePause]);
+  
 
   // Function to handle the right arrow button in the modal to go to the next image or video
-  const handleNext = () => {
+  const handleNext = useCallback(() => {
     if (selectedProject) {
       const newIndex = currentImageIndex < selectedProject.images.length - 1 ? currentImageIndex + 1 : 0;
       setCurrentImageIndex(newIndex);
@@ -205,7 +202,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({
         togglePause();
       }
     }
-  };
+  }, [selectedProject, currentImageIndex, isPaused, setCurrentImageIndex, togglePause]);
 
   // useEffect to show the modal when it is opened
   useEffect(() => {
@@ -368,7 +365,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({
         </div>
       </div>
     );
-  }, [selectedProject, currentImageIndex, isDarkMode, language, isPaused, handleDotClick, handleClose, togglePause, isVideoPlaying]);
+  }, [selectedProject, currentImageIndex, isDarkMode, language, isPaused, handleDotClick, handleClose, togglePause, handleNext, handlePrev, handleVideoEnd]);
 
   if (!isOpen && !isClosing) return null;
 

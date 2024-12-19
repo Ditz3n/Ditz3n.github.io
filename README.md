@@ -1,15 +1,14 @@
-
 # 🇩🇰 - Mads Villadsen - Portfolio 🌟
 
 Dette projekt er en personlig portefølje, der viser mine færdigheder og projekter som softwareingeniørstuderende på 4. semester ved Aarhus Universitet. Det er bygget med React, TypeScript og TailwindCSS. 💻
 
-## Link
-
-For at komme til den interaktive hjemmeside: [ditz3n.github.io](https://ditz3n.github.io/). 🎉
-
 ## Formål 🎯
 
 Formålet med denne portefølje er at præsentere mine projekter, værktøjer og erfaringer inden for softwareudvikling. Den giver også en platform for potentielle arbejdsgivere og samarbejdspartnere til at lære mere om mine færdigheder og baggrund.
+
+## Link
+
+For at komme til den interaktive hjemmeside: [ditz3n.github.io](https://ditz3n.github.io/). 🎉
 
 ## Funktioner ✨
 
@@ -24,18 +23,22 @@ Formålet med denne portefølje er at præsentere mine projekter, værktøjer og
 ### /src/context
 
 - **App.css:** 0 linjer kode
-- **App.tsx:** 146 linjer kode
+- **App.tsx:** 143 linjer kode
 - **Index.css:** 124 linjer kode
 - **main.tsx:** 19 linjer kode
 
 ### /src/hooks
 
 - **useActiveSection.ts:** 34 linjer kode
+- **useLanguage.ts:** 13 linjer kode
+- **useTheme.ts:** 13 linjer kode
 
 ### /src/context
 
-- **LanguageContext.tsx:** 39 linjer kode
-- **ThemeContext.tsx:** 54 linjer kode
+- **LanguageProvider.tsx:** 24 linjer kode
+- **ThemeProvider.tsx:** 37 linjer kode
+- **languageContext.ts:** 14 linjer kode
+- **themeContext.ts:** 11 linjer kode
 
 ### /src/components
 
@@ -52,30 +55,30 @@ Formålet med denne portefølje er at præsentere mine projekter, værktøjer og
 
 - **About.tsx:** 82 linjer kode
 - **Contact.tsx:** 138 linjer kode
-- **Education.tsx:** 156 linjer
+- **Education.tsx:** 169 linjer kode
 - **Experience.tsx:** 32 linjer kode
 - **Footer.tsx:** 12 linjer kode
 - **Home.tsx:** 90 linjer kode
 - **ProgrammingLanguages.tsx:** 41 linjer kode
-- **ProjectModal.tsx:** 388 linjer kode
+- **ProjectModal.tsx:** 385 linjer kode
 - **Projects.tsx:** 60 linjer kode
-- **Tools.tsx:** 48 linker kode
+- **Tools.tsx:** 48 linjer kode
 
 ### Total 🔥
 
-- **Total linjer kode:** 1919 linjer
+- **Total linjer kode:** 1964 linjer kode
 
 # 🇺🇸 - Mads Villadsen - Portfolio 🌟
 
 This project is a personal portfolio showcasing my skills and projects as a software engineering student in the 4th semester at Aarhus University. It is built with React, TypeScript, and TailwindCSS. 💻
 
-## Link
-
-To access the interactive website: [ditz3n.github.io](https://ditz3n.github.io/). 🎉
-
 ## Purpose 🎯
 
 The purpose of this portfolio is to present my projects, tools, and experiences in software development. It also provides a platform for potential employers and collaborators to learn more about my skills and background.
+
+## Link
+
+To access the interactive website: [ditz3n.github.io](https://ditz3n.github.io/). 🎉
 
 ## Features ✨
 
@@ -90,18 +93,22 @@ The purpose of this portfolio is to present my projects, tools, and experiences 
 ### /src/context
 
 - **App.css:** 0 lines of code
-- **App.tsx:** 146 lines of code
+- **App.tsx:** 143 lines of code
 - **Index.css:** 124 lines of code
 - **main.tsx:** 19 lines of code
 
 ### /src/hooks
 
 - **useActiveSection.ts:** 34 lines of code
+- **useLanguage.ts:** 13 linjer kode
+- **useTheme.ts:** 13 linjer kode
 
 ### /src/context
 
-- **LanguageContext.tsx:** 39 lines of code
-- **ThemeContext.tsx:** 54 lines of code
+- **LanguageProvider.tsx:** 24 linjer kode
+- **ThemeProvider.tsx:** 37 linjer kode
+- **languageContext.ts:** 14 linjer kode
+- **themeContext.ts:** 11 linjer kode
 
 ### /src/components
 
@@ -118,15 +125,15 @@ The purpose of this portfolio is to present my projects, tools, and experiences 
 
 - **About.tsx:** 82 lines of code
 - **Contact.tsx:** 138 lines of code
-- **Education.tsx:** 156 lines of code
+- **Education.tsx:** 169 lines of code
 - **Experience.tsx:** 32 lines of code
 - **Footer.tsx:** 12 lines of code
 - **Home.tsx:** 90 lines of code
 - **ProgrammingLanguages.tsx:** 41 lines of code
-- **ProjectModal.tsx:** 388 lines of code
+- **ProjectModal.tsx:** 385 lines of code
 - **Projects.tsx:** 60 lines of code
 - **Tools.tsx:** 48 lines of code
 
 ### Total 🔥
 
-- **Total lines of code:** 1919 lines of code
+- **Total lines of code:** 1964 lines of code

@@ -1,6 +1,6 @@
 // Section Navigagtion | This component is used to display a navigation bar that allows the user to scroll to different sections of the page
 // useLanguage.ts to manage English or Danish language
-import { useLanguage } from '../context/LanguageContext'
+import { useLanguage } from '../hooks/useLanguage'
 
 // useActiveSection.ts to manage the active section in the navigation bar
 import { useActiveSection } from '../hooks/useActiveSection'

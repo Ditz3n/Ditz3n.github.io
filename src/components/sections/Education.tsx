@@ -1,9 +1,9 @@
 // Education | This component is used to display the education section of the website
 // Importing useState from the React library
-import { useState, useRef } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 
 // Importing the useLanguage hook to manage the language state
-import { useLanguage } from '../../context/LanguageContext'
+import { useLanguage } from '../../hooks/useLanguage'
 import { coursesData } from '../CoursesData'
 
 // Importing the CheckCircleIcon from Heroicons
@@ -17,6 +17,9 @@ const Education = () => {
 
   // State to manage the open semesters
   const [openSemesters, setOpenSemesters] = useState<number[]>([])
+
+  // Refs for each semester
+  const nodeRefs = useRef<Record<number, React.RefObject<HTMLDivElement>>>({});
 
   // Calculating the total ECTS, completed ECTS, and progress percentage
   const totalECTS = coursesData.reduce((acc, course) => acc + course.ects, 0)
@@ -34,6 +37,17 @@ const Education = () => {
     });
     return acc;
   }, {} as Record<number, { id: string; name: string; ects: number; completed: boolean }[]>);
+
+  // Initialize refs for all semesters
+  useEffect(() => {
+    const semesters = Object.keys(groupedCourses).map(Number);
+    semesters.forEach((semesterNum) => {
+      if (!nodeRefs.current[semesterNum]) {
+        nodeRefs.current[semesterNum] = React.createRef<HTMLDivElement>();
+      }
+    });
+  }, [groupedCourses]);
+
 
   // Function to toggle the open semesters
   const toggleSemester = (semesterNum: number) => {
@@ -60,7 +74,6 @@ const Education = () => {
           {Object.entries(groupedCourses).map(([semester, semesterCourses]) => {
             const semesterNum = Number(semester)
             const isOpen = openSemesters.includes(semesterNum)
-            const nodeRef = useRef(null);
 
             return (
               <div key={semester} className="relative rounded-lg shadow overflow-hidden p-[2px] bg-gradient-to-r from-[#77a1d3] via-[#79cbca] to-[#e684ae] dark:from-[#FF4E50] dark:to-[#F9D423]">
@@ -85,9 +98,9 @@ const Education = () => {
                     timeout={300}
                     classNames="semester"
                     unmountOnExit
-                    nodeRef={nodeRef}
+                    nodeRef={nodeRefs.current[semesterNum]}
                   >
-                    <div ref={nodeRef} className="border-t border-gray-200/50 dark:border-gray-700/50">
+                    <div ref={nodeRefs.current[semesterNum]} className="border-t border-gray-200/50 dark:border-gray-700/50">
                       { /* Table with the courses */}
                       <table className="w-full">
                         <thead>

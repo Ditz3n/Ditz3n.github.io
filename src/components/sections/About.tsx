@@ -1,7 +1,7 @@
 // About | This component is used to display information about me
 
 // Importing useLanguage to manage the language state, and the profile picture
-import { useLanguage } from '../../context/LanguageContext'
+import { useLanguage } from '../../hooks/useLanguage'
 import profilePic from '../../assets/mads.jpg'
 
 export default function About() {

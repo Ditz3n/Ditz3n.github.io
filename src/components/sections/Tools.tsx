@@ -1,6 +1,6 @@
 // Tools | This component is used to display the tools I have experience with
 // useLanguage.ts to manage English or Danish language
-import { useLanguage } from '../../context/LanguageContext'
+import { useLanguage } from '../../hooks/useLanguage'
 
 // Importing the tools data
 import { toolsData } from '../ToolsData'

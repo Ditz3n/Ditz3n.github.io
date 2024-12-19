@@ -1,7 +1,7 @@
 // App | Main component of the application
 
 // Importing a lot of stuff from React and other files to use in the App component
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import LoadingScreen from './components/LoadingScreen';
 import SectionNavigation from './components/SectionNavigation';
 import Home from './components/sections/Home';
@@ -40,6 +40,13 @@ function App() {
     return () => clearTimeout(timer);
   }, []);
 
+  // Function to set the next image in the project modal
+  const handleNextImage = useCallback(() => {
+    if (selectedProject) {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % selectedProject.images.length);
+    }
+  }, [selectedProject]);
+
   // useEffect hook to handle the automatic image change in the project modal
   useEffect(() => {
     let interval: NodeJS.Timeout;
@@ -49,7 +56,7 @@ function App() {
       }, 3000);
     }
     return () => clearInterval(interval);
-  }, [isPaused, selectedProject]);
+  }, [isPaused, selectedProject, handleNextImage]);
 
   // useEffect hook to handle the overflow of the body when the modal is open
   useEffect(() => {
@@ -61,12 +68,10 @@ function App() {
   }, [isModalOpen]);
 
   // useEffect hook to preload the videos in the project modals because they would not play otherwise
-  // I had to do this because the videos would not play in the modal on slowr devices if they were not preloaded
+  // I had to do this because the videos would not play in the modal on slower devices if they were not preloaded
   useEffect(() => {
     const preloadVideos = () => {
-      const videos = [
-        electronicCarVideo,
-      ];
+      const videos = [electronicCarVideo];
       videos.forEach((videoSrc) => {
         const video = document.createElement('video');
         video.src = videoSrc;
@@ -92,13 +97,6 @@ function App() {
     document.body.style.overflow = 'auto';
   };
 
-  // Function to set the first image in the project modal when opening it
-  const handleNextImage = () => {
-    if (selectedProject) {
-      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % selectedProject.images.length);
-    }
-  };
-
   // Function to handle the previous image in the project modal
   const togglePause = () => {
     setIsPaused((prev) => !prev);
@@ -121,7 +119,6 @@ function App() {
                 <Projects openModal={openModal} />
                 <Contact />
                 <Footer />
-                
                 <ProjectModal
                   isOpen={isModalOpen}
                   onClose={closeModal}

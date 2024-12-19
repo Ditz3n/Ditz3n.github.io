@@ -1,6 +1,6 @@
 // ProgrammingLanguages | This component is used to display the programming languages I have experience with
 // useLanguage.ts to manage English or Danish language
-import { useLanguage } from '../../context/LanguageContext';
+import { useLanguage } from '../../hooks/useLanguage';
 
 // Import Programming Languages Logos
 import { languageData } from '../LanguagesData';
