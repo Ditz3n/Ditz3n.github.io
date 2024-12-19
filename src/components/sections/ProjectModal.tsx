@@ -239,7 +239,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({
 
     return (
       <div
-        className={`dark:bg-[#1a1a1a] bg-white rounded-lg p-6 max-w-md w-full transition-all duration-500 ease-in-out transform ${languages && languages.length > 5 ? 'max-h-[80vh] min-h-[70vh] overflow-y-auto' : ''}`}
+        className={`dark:bg-[#1a1a1a] bg-white rounded-lg p-6 max-w-md w-full transition-all duration-500 ease-in-out transform max-h-[80vh] min-h-[70vh] overflow-y-auto`}
         onClick={(e) => e.stopPropagation()}
       >
         <h2 className="text-2xl font-bold mb-4 dark:text-white text-gray-700 text-center">
