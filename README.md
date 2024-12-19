@@ -5,7 +5,7 @@ Dette projekt er en personlig portefølje, der viser mine færdigheder og projek
 
 ## Link
 
-For at komme til den interaktive hjemmeside: [ditz3n.github.io](ditz3n.github.io). 🎉
+For at komme til den interaktive hjemmeside: [ditz3n.github.io](https://ditz3n.github.io/). 🎉
 
 ## Formål 🎯
 
@@ -71,7 +71,7 @@ This project is a personal portfolio showcasing my skills and projects as a soft
 
 ## Link
 
-To access the interactive website: [ditz3n.github.io](ditz3n.github.io). 🎉
+To access the interactive website: [ditz3n.github.io](https://ditz3n.github.io/). 🎉
 
 ## Purpose 🎯
 
