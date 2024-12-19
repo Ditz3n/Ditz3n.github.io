@@ -1,3 +1,6 @@
+// About | This component is used to display information about me
+
+// Importing useLanguage to manage the language state, and the profile picture
 import { useLanguage } from '../../context/LanguageContext'
 import profilePic from '../../assets/mads.jpg'
 
@@ -13,6 +16,7 @@ export default function About() {
         
         <div className="flex flex-col gap-12">
           <div className="text-lg sm:text-xl text-gray-600 dark:text-gray-300 space-y-6 max-w-[350px] sm:max-w-[450px] lg+:max-w-[700px] transition-all duration-300">
+          { /* About Text - If the language is Danish, display the Danish text, else display the English text */ }           
             {language === 'da' ? (
               <>
                 <p>
@@ -63,6 +67,7 @@ export default function About() {
                   className="w-full h-full object-cover transition-all duration-300 group-hover:brightness-[0.3]"
                 />
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  { /* Profile Picture Hover Effect - If the language is Danish, display 'Hej Verden!', else display 'Hello World!' */ }
                   <p className="text-white text-xl font-bold">
                     {language === 'da' ? 'Hej Verden!' : 'Hello World!'} 🎉
                   </p>

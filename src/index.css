@@ -1,3 +1,5 @@
+/* Index | This file contains the global styles for the application */
+/* TailwindCSS declarations */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -13,49 +15,7 @@ html {
   scroll-behavior: smooth;
 }
 
-@media (max-width: 640px) {
-  .modal-image {
-    width: 100%; /* Gør billederne responsive */
-    height: auto; /* Bevarer billedforholdet */
-  }
-}
-
-.animate-hover {
-  transform: scale(1.05);
-  transition: transform 0.2s;
-}
-
-@keyframes fade {
-  0% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
-@keyframes blink {
-  0% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-.fade {
-  display: inline-block;
-  animation: blink 1s infinite;
-  color: #e684ae;
-}
-
-/* Animateret gradient kant til billeder og modal */
+/* Animated gradient border for the profile picture and the images/videos in the modal */
 .animated-gradient-border {
   position: relative;
   display: inline-block;
@@ -91,6 +51,7 @@ html {
   }
 }
 
+/* Animateret gradient bar at top of page */
 .animate-gradient {
   background-size: 300%;
   -webkit-animation: animatedgradient 6s ease infinite alternate;
@@ -141,22 +102,7 @@ html {
   background: #333;
 }
 
-.gradient-border {
-  position: relative;
-}
-
-.gradient-border::before {
-  content: '';
-  position: absolute;
-  top: -1px; /* Juster for at dække grænsen */
-  left: 10px; /* Juster for at dække grænsen */
-  right: -1px; /* Juster for at dække grænsen */
-  bottom: -1px; /* Juster for at dække grænsen */
-  background: linear-gradient(to right, #77a1d3, #79cbca, #e684ae); /* Gradient farver */
-  z-index: -1; /* Sørg for, at det er bagved indholdet */
-  border-radius: inherit; /* Behold den samme runding som den overordnede div */
-}
-
+/* Animation to open/close semester */
 .semester-enter {
   max-height: 0;
   opacity: 0;

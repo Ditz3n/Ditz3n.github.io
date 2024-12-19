@@ -1,59 +1,13 @@
+// ProgrammingLanguages | This component is used to display the programming languages I have experience with
+// useLanguage.ts to manage English or Danish language
 import { useLanguage } from '../../context/LanguageContext';
 
 // Import Programming Languages Logos
-import { languageLogos } from '../Languages';
+import { languageData } from '../LanguagesData';
 
-// Funktion til at tjekke hvilket sprog brugerens system bruger
+// Function to display the programming languages I have experience with
 const ProgrammingLanguages = () => {
   const { language } = useLanguage();
-
-  // Liste over programmeringssprog med logoer
-  const languages = [
-    { 
-      name: 'React/React Native',
-      logoUrl: languageLogos.react,
-    },
-    { 
-      name: 'CSS',
-      logoUrl: languageLogos.css,
-    },
-    { 
-      name: 'HTML',
-      logoUrl: languageLogos.html,
-    },
-    { 
-      name: 'JavaScript',
-      logoUrl: languageLogos.javascript,
-    },
-    { 
-      name: 'TypeScript',
-      logoUrl: languageLogos.typescript,
-    },
-    { 
-      name: 'C#',
-      logoUrl: languageLogos.csharp,
-    },
-    { 
-      name: 'C++',
-      logoUrl: languageLogos.cpp,
-    },
-    { 
-      name: 'Python',
-      logoUrl: languageLogos.python,
-    },
-    { 
-      name: 'MongoDB',
-      logoUrl: languageLogos.mongodb,
-    },
-    { 
-      name: 'SQL',
-      logoUrl: languageLogos.sql,
-    },
-    {
-      name: 'Assembly',
-      logoUrl: languageLogos.assembly,
-    },
-  ];
 
   return (
     <div>
@@ -67,8 +21,9 @@ const ProgrammingLanguages = () => {
           : 'Below you can see the programming languages and technologies that I have experience with through my education and personal projects. The ones listed first are the ones I have the most experience with.'}
       </p>
 
+      {/* Display programming languages in a grid */}
       <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 w-full max-w-[350px] sm:max-w-[450px] lg+:max-w-[700px]">
-        {languages.map((lang) => (
+        {languageData.map((lang) => (
           <div key={lang.name} className="relative shadow-md group rounded-lg p-[2px] bg-gradient-to-r from-[#77a1d3] via-[#79cbca] to-[#e684ae] dark:from-[#FF4E50] dark:to-[#F9D423] hover:scale-105 transition-transform duration-200">
             <div className="bg-gray-50 dark:bg-[#222222] rounded-lg p-4 h-full transition-colors duration-200">
               <div className="flex flex-col items-center space-y-3">

@@ -1,18 +1,22 @@
-import { cardio } from 'ldrs'; // Importerer cardio animationen fra ldr.
+// LoadingScreen | This component is used to display a loading screen with an animation before entering the website
+// Importing the cardio animation from the ldrs package
+import { cardio } from 'ldrs';
 
-cardio.register(); // Registrerer cardio animationen.
+// Registering the cardio animation
+cardio.register();
 
+// Declaring the LoadingScreen component
 const LoadingScreen = () => {
   return (
     <div className="flex items-center justify-center min-h-screen">
       <l-cardio
-        size="50" // Animationens størrelse
-        stroke="4" // Animationens tykkelse
-        speed="1.2" // Animationens hastighed
-        color="gray"
+        size="50" // The size of the animation
+        stroke="4" // The thickness of the animation
+        speed="1.2" // The speed of the animation
+        color="gray" // The color of the animation
       ></l-cardio>
     </div>
   );
 };
 
-export default LoadingScreen; // Exporterer LoadingScreen.
+export default LoadingScreen;

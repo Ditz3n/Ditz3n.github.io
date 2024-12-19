@@ -1,3 +1,4 @@
+// Tailwind CSS Indicator | This component is used to display the current screen size in development mode
 export function TailwindIndicator() {
   if (process.env.NODE_ENV === "production") return null;
 

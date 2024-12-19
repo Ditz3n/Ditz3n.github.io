@@ -1,8 +1,13 @@
+// useActiveSection | This custom hook is used to determine which section is currently active on the website
+
+// Importing the useState and useEffect hooks from React
 import { useState, useEffect } from 'react'
 
+// Exporting the useActiveSection custom hook
 export function useActiveSection() {
   const [activeSection, setActiveSection] = useState('home')
 
+  // useEffect to observe the sections and update the active section
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {

@@ -1,19 +1,29 @@
+// Section Navigagtion | This component is used to display a navigation bar that allows the user to scroll to different sections of the page
+// useLanguage.ts to manage English or Danish language
 import { useLanguage } from '../context/LanguageContext'
+
+// useActiveSection.ts to manage the active section in the navigation bar
 import { useActiveSection } from '../hooks/useActiveSection'
+
+// Importing the different icons for the navigation bar
 import { HomeIcon, BriefcaseIcon, Squares2X2Icon, EnvelopeIcon } from '@heroicons/react/24/outline'
 
+// SectionNavigation component
 export default function SectionNavigation() {
   const { language } = useLanguage()
   const activeSection = useActiveSection()
 
+  // Navigation items
   const navItems = {
     da: ['OM MIG', 'ERFARING', 'PROJEKTER', 'KONTAKT'],
     en: ['ABOUT', 'EXPERIENCE', 'PROJECTS', 'CONTACT']
   }
 
+  // Section IDs for determining icons for the different sections on smaller screens where the navigation is displayed at the bottom of the screen
   const sectionIds = ['about', 'experience', 'projects', 'contact']
   const icons = [<HomeIcon className="h-6 w-6" />, <BriefcaseIcon className="h-6 w-6" />, <Squares2X2Icon className="h-6 w-6" />, <EnvelopeIcon className="h-6 w-6" />]
 
+  // Function to handle scrolling to a specific section
   const handleScroll = (id: string) => {
     const element = document.getElementById(id)
     if (element) {
@@ -26,6 +36,7 @@ export default function SectionNavigation() {
     }
   }
 
+  // Function to render navigation links
   const renderNavLinks = (items: string[]) => (
     items.map((text, i) => (
       <a

@@ -1,82 +1,46 @@
-import { useState } from 'react'
-import { useLanguage } from '../../context/LanguageContext'
-import { CheckCircleIcon } from '@heroicons/react/24/solid'
-import { CSSTransition } from 'react-transition-group'
+// Education | This component is used to display the education section of the website
+// Importing useState from the React library
+import { useState, useRef } from 'react'
 
-interface Course {
-  id: string
-  name: string
-  semester: number
-  ects: number
-  completed: boolean
-}
+// Importing the useLanguage hook to manage the language state
+import { useLanguage } from '../../context/LanguageContext'
+import { coursesData } from '../CoursesData'
+
+// Importing the CheckCircleIcon from Heroicons
+import { CheckCircleIcon } from '@heroicons/react/24/solid'
+
+// Importing the CSSTransition component from react-transition-group to manage the opening/closing animation of the semesters
+import { CSSTransition } from 'react-transition-group'
 
 const Education = () => {
   const { language } = useLanguage()
 
-  const courses: Course[] = [
-    // 1. semester
-    { id: 'SW1MSYS-01', name: language === 'da' ? 'Microcontroller systemer' : 'Microcontroller Systems', semester: 1, ects: 5, completed: true },
-    { id: 'SW1OPRO-01', name: language === 'da' ? 'Objektorienteret programmering' : 'Object-Oriented Programming', semester: 1, ects: 5, completed: true },
-    { id: 'SW1IDE-01', name: language === 'da' ? 'Indledende digital elektronik' : 'Introduction to Digital Electronics', semester: 1, ects: 5, completed: true },
-    { id: 'SW1KLT-01', name: language === 'da' ? 'Indledende kredsløbsteknik' : 'Introduction to Circuit Technology', semester: 1, ects: 5, completed: true },
-    { id: 'SW1MML5-01', name: language === 'da' ? 'Matematik modellering af lineære systemer' : 'Mathematical Modeling of Linear Systems', semester: 1, ects: 5, completed: true },
-    { id: 'SW1PRJ1-01', name: language === 'da' ? 'Projekt 1' : 'Project 1', semester: 1, ects: 5, completed: true },
-
-    // 2. semester
-    { id: 'SW2ISE-01', name: language === 'da' ? 'Indledende System Engineering' : 'Introduction to System Engineering', semester: 2, ects: 5, completed: true },
-    { id: 'SW2OOP-01', name: language === 'da' ? 'Objektorienteret programmering' : 'Object-Oriented Programming', semester: 2, ects: 5, completed: true },
-    { id: 'SW2PLA-01', name: language === 'da' ? 'Praktisk lineær algebra for softwareudviklere' : 'Practical Linear Algebra for Software Developers', semester: 2, ects: 10, completed: true },
-    { id: 'SW2FYS-01', name: language === 'da' ? 'Grundmodeller til den fysiske verden' : 'Basic Models of the Physical World', semester: 2, ects: 5, completed: true },
-    { id: 'SW2PRJ2-01', name: language === 'da' ? 'Semesterprojekt 2' : 'Semester Project 2', semester: 2, ects: 5, completed: true },
-
-    // 3. semester
-    { id: 'SW3ISU-01', name: language === 'da' ? 'Indlejret softwareudvikling' : 'Embedded Software Development', semester: 3, ects: 5, completed: true },
-    { id: 'SW3ALG-01', name: language === 'da' ? 'Algoritmer og datastrukturer' : 'Algorithms and Data Structures', semester: 3, ects: 5, completed: true },
-    { id: 'SW3DSB-01', name: language === 'da' ? 'Digital signalbehandling' : 'Digital Signal Processing', semester: 3, ects: 5, completed: true },
-    { id: 'SW3HAL-01', name: language === 'da' ? 'Hardware abstraktioner' : 'Hardware Abstractions', semester: 3, ects: 5, completed: true },
-    { id: 'SW3NGK-01', name: language === 'da' ? 'Netværksprogrammering og grundlæggende kommunikationsnetværk' : 'Network Programming and Basic Communication Networks', semester: 3, ects: 5, completed: true },
-    { id: 'SW3PRJ3-01', name: language === 'da' ? 'Semesterprojekt 3' : 'Semester Project 3', semester: 3, ects: 5, completed: true },
-
-    // 4. semester (current)
-    { id: 'SW4BAD-01', name: language === 'da' ? 'Back-end udvikling og databaser' : 'Back-end Development and Databases', semester: 4, ects: 10, completed: false },
-    { id: 'SW4FED-02', name: language === 'da' ? 'Front-end udvikling' : 'Front-end Development', semester: 4, ects: 5, completed: false },
-    { id: 'SW4SWD-01', name: language === 'da' ? 'Softwaredesign' : 'Software Design', semester: 4, ects: 5, completed: false },
-    { id: 'SW4SWT-01', name: language === 'da' ? 'Softwaretest' : 'Software Testing', semester: 4, ects: 5, completed: false },
-    { id: 'SW4PRJ4-01', name: language === 'da' ? 'Semesterprojekt 4' : 'Semester Project 4', semester: 4, ects: 5, completed: false },
-
-    // 5. semester
-    { id: 'ESPRJ-01', name: language === 'da' ? 'Ingeniørpraktik' : 'Engineering Internship', semester: 5, ects: 30, completed: false },
-
-    // 6. semester
-    { id: 'VALGFRI', name: language === 'da' ? 'Valgfrie kurser' : 'Elective Courses', semester: 6, ects: 30, completed: false },
-
-    // 7. semester
-    { id: 'VALGFRI', name: language === 'da' ? 'Valgfrie kurser' : 'Elective Courses', semester: 7, ects: 10, completed: false },
-    { id: 'SW7BAC-01', name: language === 'da' ? 'Bachelorprojekt' : 'Bachelor Project', semester: 7, ects: 20, completed: false },
-  ]
-
+  // State to manage the open semesters
   const [openSemesters, setOpenSemesters] = useState<number[]>([])
 
-  const totalECTS = courses.reduce((acc, course) => acc + course.ects, 0)
-  const completedECTS = courses.reduce((acc, course) => course.completed ? acc + course.ects : acc, 0)
+  // Calculating the total ECTS, completed ECTS, and progress percentage
+  const totalECTS = coursesData.reduce((acc, course) => acc + course.ects, 0)
+  const completedECTS = coursesData.reduce((acc, course) => course.completed ? acc + course.ects : acc, 0)
   const progressPercentage = (completedECTS / totalECTS) * 100
 
-  const groupedCourses = courses.reduce((acc, course) => {
+  // Grouping the courses by semester
+  const groupedCourses = coursesData.reduce((acc, course) => {
     if (!acc[course.semester]) {
       acc[course.semester] = [];
     }
-    acc[course.semester].push(course);
+    acc[course.semester].push({
+      ...course,
+      name: course.name[language]
+    });
     return acc;
-  }, {} as Record<number, Course[]>);
+  }, {} as Record<number, { id: string; name: string; ects: number; completed: boolean }[]>);
 
+  // Function to toggle the open semesters
   const toggleSemester = (semesterNum: number) => {
     setOpenSemesters(prev => 
-      prev.includes(semesterNum)
-        ? prev.filter(num => num !== semesterNum)
-        : [...prev, semesterNum]
-    )
-  }
+      prev.includes(semesterNum) ? prev.filter(num => num !== semesterNum) : [...prev, semesterNum]
+    );
+  };
 
   return (
     <div>
@@ -90,11 +54,14 @@ const Education = () => {
           : 'Below you can see my current progress through my Bachelor of Engineering degree in Software Technology at Aarhus University. Green fields indicate completed courses.'}
       </p>
       
+      {/* Mapping the courses */}
       <div className="overflow-x-auto transition-all duration-300">
         <div className="w-full max-w-[350px] sm:max-w-[450px] lg+:max-w-[700px] transition-all duration-300 space-y-4">
           {Object.entries(groupedCourses).map(([semester, semesterCourses]) => {
             const semesterNum = Number(semester)
             const isOpen = openSemesters.includes(semesterNum)
+            const nodeRef = useRef(null);
+
             return (
               <div key={semester} className="relative rounded-lg shadow overflow-hidden p-[2px] bg-gradient-to-r from-[#77a1d3] via-[#79cbca] to-[#e684ae] dark:from-[#FF4E50] dark:to-[#F9D423]">
                 <div className="bg-white dark:bg-[#1a1a1a] rounded-lg overflow-hidden">
@@ -112,13 +79,16 @@ const Education = () => {
                     </div>
                   </button>
                   
+                  {/* CSSTransition for managing the opening/closing animation */}
                   <CSSTransition
                     in={isOpen}
                     timeout={300}
                     classNames="semester"
                     unmountOnExit
+                    nodeRef={nodeRef}
                   >
-                    <div className="border-t border-gray-200/50 dark:border-gray-700/50">
+                    <div ref={nodeRef} className="border-t border-gray-200/50 dark:border-gray-700/50">
+                      { /* Table with the courses */}
                       <table className="w-full">
                         <thead>
                           <tr className="border-b border-gray-200 dark:border-gray-700">

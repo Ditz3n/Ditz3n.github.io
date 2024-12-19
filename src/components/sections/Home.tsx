@@ -1,15 +1,21 @@
+// Home | This component is used to display the home section of the website (the first part the user sees when they enter the website)
+// Importing different hooks and components from the React library
 import { useEffect, useState } from 'react';
+
+// Importing useLanguage and AnimatedText from the context and components folders used for managing the language and animating the text
 import { useLanguage } from '../../context/LanguageContext';
 import AnimatedText from '../AnimatedText';
 
+// Home component
 export default function Home() {
   const { language } = useLanguage();
   const [displayedText, setDisplayedText] = useState('');
   const fullText = 'Mads Villadsen';
   const [dotPosition, setDotPosition] = useState(0);
 
+  // Typing effect which types out the full name (Mads Villadsen)
   useEffect(() => {
-    setDisplayedText(''); // Reset displayedText at the start
+    setDisplayedText(''); // Reset displayedText at the start of the effect to avoid the text already being displayed
     let index = 0;
     const interval = setInterval(() => {
       if (index <= fullText.length) {
@@ -18,11 +24,12 @@ export default function Home() {
       } else {
         clearInterval(interval);
       }
-    }, 100);
+    }, 100); // Typing speed
 
     return () => clearInterval(interval);
   }, [fullText]);
 
+  // Blinking dot effect
   useEffect(() => {
     const dotInterval = setInterval(() => {
       setDotPosition((prev) => (prev === 0 ? 1 : 0)); // Alternate position every 3 seconds
@@ -64,6 +71,7 @@ export default function Home() {
             </span>
           </div>
         </h1>
+        { /* Displaying the text before and after the name with the AnimatedText component */}
         <div className="text-gray-800 dark:text-white font-bold text-2xl sm:text-3xl lg+:text-4xl space-y-2">
           <AnimatedText className="block transition-all duration-300">
             {language === 'da'

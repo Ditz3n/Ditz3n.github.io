@@ -13,10 +13,6 @@ module.exports = {
       fontFamily: {
       },
       keyframes: {
-        fade: {
-          '0%': { opacity: '0' },
-          '100%': { opacity: '1' },
-        },
         gradientRotate: {
           '0%': { 'background-position': '0% 50%' },
           '50%': { 'background-position': '100% 50%' },

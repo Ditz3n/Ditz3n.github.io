@@ -1,3 +1,6 @@
+// Experience | This component is used to display the experience section of the website
+
+// Importing useLanguage to manage the language state, and the different sections of the Experience component
 import { useLanguage } from '../../context/LanguageContext'
 import ProgrammingLanguages from './ProgrammingLanguages'
 import Education from './Education'

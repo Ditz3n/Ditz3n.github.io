@@ -1,10 +1,14 @@
+// AnimatedText | This component is used to animate text when it changes on the website
+// Importing the useEffect and useState hooks from React
 import { useEffect, useState } from 'react'
 
+// Interface for AnimatedText component
 interface AnimatedTextProps {
   children: React.ReactNode
   className?: string
 }
 
+// AnimatedText component
 const AnimatedText = ({ children, className = '' }: AnimatedTextProps) => {
   const [content, setContent] = useState(children)
   const [isAnimating, setIsAnimating] = useState(false)
@@ -14,7 +18,7 @@ const AnimatedText = ({ children, className = '' }: AnimatedTextProps) => {
     const timer = setTimeout(() => {
       setContent(children)
       setIsAnimating(false)
-    }, 150) // Halvdelen af animationstiden
+    }, 150) // The duration of the animation (half of the css transition duration)
 
     return () => clearTimeout(timer)
   }, [children])

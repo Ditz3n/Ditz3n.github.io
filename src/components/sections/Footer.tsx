@@ -1,3 +1,4 @@
+// Footer | This component is used to display the footer of the website
 function Footer() {
   return (
     <section id="footer" className="items-center justify-center xs:px-32 sm:px-16 md:px-24 lg:px-32 transition-all duration-300 pt-8 pb-2 opacity-50">
