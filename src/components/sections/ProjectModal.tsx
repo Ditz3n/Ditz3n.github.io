@@ -305,7 +305,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({
             </div>
           </div>
         </div>
-        <p className="dark:text-white text-gray-700 text-center mb-4">
+        <p className="dark:text-white text-gray-800 text-center mb-4">
           {language === 'da' ? selectedProject.description.da : selectedProject.description.en}
         </p>
         { /* Display the languages and tools used in the project */ }

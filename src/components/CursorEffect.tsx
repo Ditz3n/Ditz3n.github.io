@@ -156,7 +156,7 @@ function CursorEffect({ isModalOpen }: { isModalOpen: boolean }) {
           top: `${outlinePosition.y - 20}px`, // Follow the position with a delay
           left: `${outlinePosition.x - 20}px`, // Follow the position with a delay
           willChange: "transform",
-          transition: "transform 0.15s ease-out, top 0.1s ease-out, left 0.1s ease-out", // Apply transitions
+          transition: "transform 0.15s ease-out, top 0.1s ease-out, left 0.1s ease-out",
         }}
       />
       <div
@@ -167,13 +167,13 @@ function CursorEffect({ isModalOpen }: { isModalOpen: boolean }) {
           width: "10px",
           height: "10px",
           borderRadius: "50%",
-          backgroundColor: theme === 'dark' ? "white" : "black",
+          backgroundColor: theme === 'dark' ? "white" : "#1F2937", // text-gray-800
           pointerEvents: "none",
           zIndex: 10000,
           top: `${mousePosition.y - 5}px`,
           left: `${mousePosition.x - 5}px`,
           willChange: "transform",
-          transition: "transform 0.1s ease-out", // Apply transition for dot movement
+          transition: "transform 0.1s ease-out", 
         }}
       />
     </>
