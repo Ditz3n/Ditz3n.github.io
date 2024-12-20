@@ -6,6 +6,10 @@ Dette projekt er en personlig portefølje, der viser mine færdigheder og projek
 
 Formålet med denne portefølje er at præsentere mine projekter, værktøjer og erfaringer inden for softwareudvikling. Den giver også en platform for potentielle arbejdsgivere og samarbejdspartnere til at lære mere om mine færdigheder og baggrund.
 
+## Link
+
+For at komme til den interaktive hjemmeside: [ditz3n.github.io](https://ditz3n.github.io/). 🎉
+
 ## Funktioner ✨
 
 - **Responsiv design**: Porteføljen er designet til at fungere på forskellige enheder og skærmstørrelser. 📱💻
@@ -72,6 +76,10 @@ This project is a personal portfolio showcasing my skills and projects as a soft
 ## Purpose 🎯
 
 The purpose of this portfolio is to present my projects, tools, and experiences in software development. It also provides a platform for potential employers and collaborators to learn more about my skills and background.
+
+## Link
+
+To access the interactive website: [ditz3n.github.io](https://ditz3n.github.io/). 🎉
 
 ## Features ✨
 
