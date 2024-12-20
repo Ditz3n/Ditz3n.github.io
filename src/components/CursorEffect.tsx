@@ -52,7 +52,6 @@ function CursorEffect({ isModalOpen }: { isModalOpen: boolean }) {
 
   const onMouseDown = () => {
     isMouseDown.current = true;
-    console.log("Mouse Down");
 
     // Apply smaller scale immediately on mouse down
     if (cursorDot.current) {
@@ -68,7 +67,6 @@ function CursorEffect({ isModalOpen }: { isModalOpen: boolean }) {
 
   const onMouseUp = () => {
     isMouseDown.current = false;
-    console.log("Mouse Up");
 
     // Reset scale when the mouse is released
     if (cursorDot.current) {
