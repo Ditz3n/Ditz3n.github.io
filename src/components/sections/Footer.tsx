@@ -9,7 +9,7 @@ function Footer() {
       <div className="text-sm w-full max-w-[350px] sm:min-w-[450px] lg+:min-w-[700px] text-center transition-all duration-300 dark:text-gray-300 text-gray-600 cursor-default">
         <h1>Copyright © 2024 Mads Villadsen</h1>
         <p className="mt-1">
-          {language === 'da' ? 'Bygget med' : 'Built with'} <span className="inline dark:hidden">🤍</span><span className="hidden dark:inline">🧡</span> {language === 'da' ? 'ved hjælp af' : 'using'} 
+          {language === 'da' ? 'Udviklet med' : 'Built with'} <span className="inline dark:hidden">🩵</span><span className="hidden dark:inline">🧡</span> {language === 'da' ? 'ved hjælp af' : 'using'} 
           <a href="https://vite.dev/" target="_blank" rel="noopener noreferrer" className="link"> React + Vite </a> 
           {language === 'da' ? 'og' : 'and'} 
           <a href="https://tailwindcss.com/" target="_blank" rel="noopener noreferrer" className="link"> Tailwind CSS</a>
