@@ -40,9 +40,9 @@ const Projects = ({ openModal }: ProjectsProps) => {
         </p>
         
         {/* Mapping the projects */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-3 gap-4 w-full max-w-[450px] lg+:max-w-[700px]">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-3 gap-4 w-full max-w-[450px] lg+:max-w-[700px]">
           {projectsData.map((project, index) => (
-            <div key={index} className="shadow-md relative group rounded-lg p-[2px] bg-gradient-to-r from-[#77a1d3] via-[#79cbca] to-[#e684ae] dark:from-[#FF4E50] dark:to-[#F9D423] hover:scale-105 transition-transform duration-200" onClick={() => openModal(project, 0)}>
+            <div key={index} className="project shadow-md relative group rounded-lg p-[2px] bg-gradient-to-r from-[#77a1d3] via-[#79cbca] to-[#e684ae] dark:from-[#FF4E50] dark:to-[#F9D423] hover:scale-105 transition-transform duration-200 cursor-pointer" onClick={() => openModal(project, 0)}>
             <div className="bg-gray-50 dark:bg-[#222222] rounded-lg p-2 h-full flex flex-col items-center justify-center transition-colors duration-200">
               <img src={project.images[0]} alt={project.title[language]} className="h-24 w-full object-cover rounded-md" />
               <div className="flex-grow flex items-center justify-center">

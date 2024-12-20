@@ -13,6 +13,7 @@ import ProjectModal from './components/sections/ProjectModal';
 import Contact from './components/sections/Contact';
 import Footer from './components/sections/Footer';
 import electronicCarVideo from './assets/project/electronic_car/electronic_car7.mp4';
+import CursorEffect from './components/CursorEffect';
 
 // Interface for the Project object
 interface Project {
@@ -109,16 +110,20 @@ function App() {
       ) : (
         <div className={`opacity-100 transition-opacity duration-300`}>
           <div className="fixed top-0 left-0 right-0 h-[4px] bg-gradient-to-r from-[#77a1d3] via-[#79cbca] to-[#e684ae] dark:from-[#FF4E50] dark:to-[#F9D423] z-40 animate-gradient"></div>
+          {/* Cursor effect component */}
+          <CursorEffect isModalOpen={isModalOpen} />
           <div className="pt-[4px]">
             <div className="flex">
               {/* Main content of the application */}
               <main className="flex-1 overflow-y-auto md:pb-0 pb-24">
-                <Home />
-                <About />
-                <Experience />
-                <Projects openModal={openModal} />
-                <Contact />
-                <Footer />
+                <div className="2xl:max-w-screen-lg 2x1:mx-auto">
+                  <Home />
+                  <About />
+                  <Experience />
+                  <Projects openModal={openModal} />
+                  <Contact />
+                  <Footer />
+                </div>
                 <ProjectModal
                   isOpen={isModalOpen}
                   onClose={closeModal}

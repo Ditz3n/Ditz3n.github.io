@@ -263,27 +263,27 @@ const ProjectModal: React.FC<ProjectModalProps> = ({
             </button>
           </div>
           <div className="flex items-center space-x-2">
-            {selectedProject.images.map((_, index) => {
-              const isActive = index === currentImageIndex;
+          {selectedProject.images.map((_, index) => {
+            const isActive = index === currentImageIndex;
 
-              // Display the dots to navigate between images and videos
-              return (
+            // Display the dots to navigate between images and videos
+            return (
+              <div
+                key={index}
+                className="relative w-2.5 h-2.5 rounded-full cursor-pointer transition-all duration-300 dots"
+                onClick={() => handleDotClick(index)}
+              >
                 <div
-                  key={index}
-                  className="relative w-2.5 h-2.5 rounded-full cursor-pointer transition-all duration-300"
-                  onClick={() => handleDotClick(index)}
-                >
-                  <div
-                    className={`absolute inset-0 rounded-full transition-all duration-300 ${isActive ? 'opacity-100 scale-125' : 'opacity-0 scale-100'}`}
-                    style={{ backgroundColor: getGradientColor(index, selectedProject.images.length, isDarkMode) }}
-                  />
-                  <div
-                    className={`absolute inset-0 rounded-full transition-all duration-300 ${isActive ? 'opacity-0' : 'opacity-100'}`}
-                    style={{ backgroundColor: 'rgb(200, 200, 200)' }}
-                  />
-                </div>
-              );
-            })}
+                  className={`absolute inset-0 rounded-full transition-all duration-300 ${isActive ? 'opacity-100 scale-125' : 'opacity-0 scale-100'}`}
+                  style={{ backgroundColor: getGradientColor(index, selectedProject.images.length, isDarkMode) }}
+                />
+                <div
+                  className={`absolute inset-0 rounded-full transition-all duration-300 ${isActive ? 'opacity-0' : 'opacity-100'}`}
+                  style={{ backgroundColor: 'rgb(200, 200, 200)' }}
+                />
+              </div>
+            );
+          })}
           </div>
           { /* Display the right arrow to navigate between images and videos */ }
           <div className="flex items-center space-x-2">
@@ -314,7 +314,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({
            {[...languages, ...tools].map((item, index) => (
               <div
                 key={index}
-                className="shadow-sm p-[2px] bg-gradient-to-r from-[#77a1d3] via-[#79cbca] to-[#e684ae] dark:from-[#FF4E50] dark:to-[#F9D423] rounded-lg hover:scale-105 transition-transform duration-300 mx-2 my-2"
+                className="shadow-sm p-[2px] bg-gradient-to-r from-[#77a1d3] via-[#79cbca] to-[#e684ae] dark:from-[#FF4E50] dark:to-[#F9D423] rounded-lg mx-2 my-2"
               >
                 <div className="bg-white dark:bg-[#1a1a1a] p-1 rounded-lg flex items-center justify-center w-10 h-10">
                   <img

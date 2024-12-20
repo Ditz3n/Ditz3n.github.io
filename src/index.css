@@ -4,11 +4,23 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --cursor-size: 10px;
+  --cursor-outline-size: 30px;
+  --cursor-outline-shade: 0.1;
+  --color-cursor: 255, 255, 255;
+}
+
 body {
   background-color: #212529;
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+  cursor: none;
+}
+
+* {
+  cursor: none !important;
 }
 
 html {

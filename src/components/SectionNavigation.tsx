@@ -42,7 +42,7 @@ export default function SectionNavigation() {
       <a
         key={i}
         onClick={() => handleScroll(sectionIds[i])}
-        className={`text-xs sm:text-sm md:text-base tracking-widest uppercase transition-all duration-200 relative
+        className={`text-xs sm:text-sm md:text-base tracking-widest uppercase transition-all duration-200 relative cursor-pointer
           ${activeSection === sectionIds[i]
             ? 'text-[#77a1d3] dark:text-[#FF4E50] md:translate-x-[-20px]' 
             : 'text-gray-500 dark:text-gray-400 hover:text-[#77a1d3] dark:hover:text-[#FF4E50]'

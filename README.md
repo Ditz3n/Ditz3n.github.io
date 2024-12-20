@@ -6,10 +6,6 @@ Dette projekt er en personlig portefølje, der viser mine færdigheder og projek
 
 Formålet med denne portefølje er at præsentere mine projekter, værktøjer og erfaringer inden for softwareudvikling. Den giver også en platform for potentielle arbejdsgivere og samarbejdspartnere til at lære mere om mine færdigheder og baggrund.
 
-## Link
-
-For at komme til den interaktive hjemmeside: [ditz3n.github.io](https://ditz3n.github.io/). 🎉
-
 ## Funktioner ✨
 
 - **Responsiv design**: Porteføljen er designet til at fungere på forskellige enheder og skærmstørrelser. 📱💻
@@ -23,8 +19,8 @@ For at komme til den interaktive hjemmeside: [ditz3n.github.io](https://ditz3n.g
 ### /src/context
 
 - **App.css:** 0 linjer kode
-- **App.tsx:** 143 linjer kode
-- **Index.css:** 124 linjer kode
+- **App.tsx:** 148 linjer kode
+- **Index.css:** 136 linjer kode
 - **main.tsx:** 19 linjer kode
 
 ### /src/hooks
@@ -50,6 +46,7 @@ For at komme til den interaktive hjemmeside: [ditz3n.github.io](https://ditz3n.g
 - **TailwindIndicator.tsx:** 15 linjer kode
 - **SectionNavigation.tsx:** 76 linjer kode
 - **LoadingScreen.tsx:** 22 linjer kode
+- **CursorEffect.tsx:** 181 linjer kode
 
 ### /src/components/sections
 
@@ -66,7 +63,7 @@ For at komme til den interaktive hjemmeside: [ditz3n.github.io](https://ditz3n.g
 
 ### Total 🔥
 
-- **Total linjer kode:** 1964 linjer kode
+- **Total linjer kode:** 2147 linjer kode
 
 # 🇺🇸 - Mads Villadsen - Portfolio 🌟
 
@@ -75,10 +72,6 @@ This project is a personal portfolio showcasing my skills and projects as a soft
 ## Purpose 🎯
 
 The purpose of this portfolio is to present my projects, tools, and experiences in software development. It also provides a platform for potential employers and collaborators to learn more about my skills and background.
-
-## Link
-
-To access the interactive website: [ditz3n.github.io](https://ditz3n.github.io/). 🎉
 
 ## Features ✨
 
@@ -93,8 +86,8 @@ To access the interactive website: [ditz3n.github.io](https://ditz3n.github.io/)
 ### /src/context
 
 - **App.css:** 0 lines of code
-- **App.tsx:** 143 lines of code
-- **Index.css:** 124 lines of code
+- **App.tsx:** 148 lines of code
+- **Index.css:** 136 lines of code
 - **main.tsx:** 19 lines of code
 
 ### /src/hooks
@@ -120,6 +113,7 @@ To access the interactive website: [ditz3n.github.io](https://ditz3n.github.io/)
 - **TailwindIndicator.tsx:** 15 lines of code
 - **SectionNavigation.tsx:** 76 lines of code
 - **LoadingScreen.tsx:** 22 lines of code
+- **CursorEffect.tsx:** 181 lines of code
 
 ### /src/components/sections
 
@@ -136,4 +130,4 @@ To access the interactive website: [ditz3n.github.io](https://ditz3n.github.io/)
 
 ### Total 🔥
 
-- **Total lines of code:** 1964 lines of code
+- **Total lines of code:** 2147 lines of code
