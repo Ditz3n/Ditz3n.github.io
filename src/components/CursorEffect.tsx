@@ -1,9 +1,7 @@
-// CursorEffect | This component is used to create a custom cursor effect on the website
-// Importing the necessary hooks and functions the React Library, and the useTheme hook
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import { useTheme } from "../hooks/useTheme";
+import { isMobile } from "../utils/isMobile";
 
-// CursorEffect component
 function CursorEffect({ isModalOpen }: { isModalOpen: boolean }) {
   const { theme } = useTheme();
   const cursorDotOutline = useRef<HTMLDivElement>(null);
@@ -16,7 +14,6 @@ function CursorEffect({ isModalOpen }: { isModalOpen: boolean }) {
   // Temporary position for the outline, to create the trailing effect
   const [outlinePosition, setOutlinePosition] = useState({ x: 0, y: 0 });
 
-  // Function to handle the mouse movement
   const onMouseMove = (event: MouseEvent) => {
     const { clientX: x, clientY: y } = event;
     setMousePosition({ x, y });
@@ -43,19 +40,16 @@ function CursorEffect({ isModalOpen }: { isModalOpen: boolean }) {
     }
   };
 
-  // Function to handle if the mouse enters the window
-  const onMouseEnter = () => {
+  const onMouseEnter = useCallback(() => {
     cursorVisible.current = true;
     toggleCursorVisibility();
-  };
+  }, []);
 
-  // Function to handle if the mouse leaves the window
-  const onMouseLeave = () => {
+  const onMouseLeave = useCallback(() => {
     cursorVisible.current = false;
     toggleCursorVisibility();
-  };
+  }, []);
 
-  // Function to handle if the mouse is pressed down
   const onMouseDown = () => {
     isMouseDown.current = true;
     console.log("Mouse Down");
@@ -72,7 +66,6 @@ function CursorEffect({ isModalOpen }: { isModalOpen: boolean }) {
     }
   };
 
-  // Function to handle if the mouse is released
   const onMouseUp = () => {
     isMouseDown.current = false;
     console.log("Mouse Up");
@@ -88,36 +81,32 @@ function CursorEffect({ isModalOpen }: { isModalOpen: boolean }) {
     }
   };
 
-  // Function to handle the cursor visibility
   useEffect(() => {
-    document.addEventListener("mousemove", onMouseMove);
-    document.addEventListener("mouseenter", onMouseEnter);
-    document.addEventListener("mouseleave", onMouseLeave);
-    document.addEventListener("mousedown", onMouseDown);
-    document.addEventListener("mouseup", onMouseUp);
+    if (!isMobile()) {
+      document.addEventListener("mousemove", onMouseMove);
+      document.addEventListener("mouseenter", onMouseEnter);
+      document.addEventListener("mouseleave", onMouseLeave);
+      document.addEventListener("mousedown", onMouseDown);
+      document.addEventListener("mouseup", onMouseUp);
 
-    handleHoverableElements();
+      handleHoverableElements();
 
-    return () => {
-      document.removeEventListener("mousemove", onMouseMove);
-      document.removeEventListener("mouseenter", onMouseEnter);
-      document.removeEventListener("mouseleave", onMouseLeave);
-      document.removeEventListener("mousedown", onMouseDown);
-      document.removeEventListener("mouseup", onMouseUp);
-    };
-    // Since the onMouseEnter and onMouseLeave functions are defined within the component and do not change, we can safely ignore this warning:
-    // 108:6  warning  React Hook useEffect has missing dependencies: 'onMouseEnter' and 'onMouseLeave'. Either include them or remove the dependency array  react-hooks/exhaustive-deps
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+      return () => {
+        document.removeEventListener("mousemove", onMouseMove);
+        document.removeEventListener("mouseenter", onMouseEnter);
+        document.removeEventListener("mouseleave", onMouseLeave);
+        document.removeEventListener("mousedown", onMouseDown);
+        document.removeEventListener("mouseup", onMouseUp);
+      };
+    }
+  }, [onMouseEnter, onMouseLeave]);
 
-  // Function to handle the cursors functionality inside the modal window
   useEffect(() => {
-    if (isModalOpen) {
+    if (isModalOpen && !isMobile()) {
       handleHoverableElements();
     }
   }, [isModalOpen]);
 
-  // Function to toggle the cursor visibility
   function toggleCursorVisibility() {
     if (cursorVisible.current) {
       cursorDotOutline.current!.style.opacity = "1";
@@ -128,7 +117,6 @@ function CursorEffect({ isModalOpen }: { isModalOpen: boolean }) {
     }
   }
 
-  // Function to handle the cursor when moving over hoverable elements
   function handleHoverableElements() {
     document.querySelectorAll("a, button, .project, .dots").forEach((el) => {
       el.addEventListener("mouseenter", () => {
@@ -138,6 +126,11 @@ function CursorEffect({ isModalOpen }: { isModalOpen: boolean }) {
         cursorEnlarged.current = false;
       });
     });
+  }
+
+  // Disable the cursor effect on mobile devices
+  if (isMobile()) {
+    return null;
   }
 
   return (
@@ -173,7 +166,7 @@ function CursorEffect({ isModalOpen }: { isModalOpen: boolean }) {
           top: `${mousePosition.y - 5}px`,
           left: `${mousePosition.x - 5}px`,
           willChange: "transform",
-          transition: "transform 0.1s ease-out", 
+          transition: "transform 0.1s ease-out",
         }}
       />
     </>
