@@ -118,7 +118,7 @@ function CursorEffect({ isModalOpen }: { isModalOpen: boolean }) {
   }
 
   function handleHoverableElements() {
-    document.querySelectorAll("a, button, .project, .dots").forEach((el) => {
+    document.querySelectorAll("a, button, .project, .dot, .link").forEach((el) => {
       el.addEventListener("mouseenter", () => {
         cursorEnlarged.current = true;
       });

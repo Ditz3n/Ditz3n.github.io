@@ -270,7 +270,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({
             return (
               <div
                 key={index}
-                className="relative w-2.5 h-2.5 rounded-full cursor-pointer transition-all duration-300 dots"
+                className="relative w-2.5 h-2.5 rounded-full cursor-pointer transition-all duration-300 dot"
                 onClick={() => handleDotClick(index)}
               >
                 <div
