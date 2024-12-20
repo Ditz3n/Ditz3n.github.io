@@ -62,7 +62,7 @@ For at komme til den interaktive hjemmeside: [ditz3n.github.io](https://ditz3n.g
 - **Contact.tsx:** 138 linjer kode
 - **Education.tsx:** 169 linjer kode
 - **Experience.tsx:** 32 linjer kode
-- **Footer.tsx:** 18 linjer kode
+- **Footer.tsx:** 22 linjer kode
 - **Home.tsx:** 90 linjer kode
 - **ProgrammingLanguages.tsx:** 41 linjer kode
 - **ProjectModal.tsx:** 385 linjer kode
@@ -71,7 +71,7 @@ For at komme til den interaktive hjemmeside: [ditz3n.github.io](https://ditz3n.g
 
 ### Total 🔥
 
-- **Total linjer kode:** 2152 linjer kode
+- **Total linjer kode:** 2156 linjer kode
 
 # 🇺🇸 - Mads Villadsen - Portfolio 🌟
 
@@ -137,7 +137,7 @@ To access the interactive website: [ditz3n.github.io](https://ditz3n.github.io/)
 - **Contact.tsx:** 138 lines of code
 - **Education.tsx:** 169 lines of code
 - **Experience.tsx:** 32 lines of code
-- **Footer.tsx:** 18 lines of code
+- **Footer.tsx:** 22 lines of code
 - **Home.tsx:** 90 lines of code
 - **ProgrammingLanguages.tsx:** 41 lines of code
 - **ProjectModal.tsx:** 385 lines of code
@@ -146,4 +146,4 @@ To access the interactive website: [ditz3n.github.io](https://ditz3n.github.io/)
 
 ### Total 🔥
 
-- **Total lines of code:** 2152 lines of code
+- **Total lines of code:** 2156 lines of code
