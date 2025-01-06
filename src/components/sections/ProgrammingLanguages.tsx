@@ -12,13 +12,13 @@ const ProgrammingLanguages = () => {
   return (
     <div>
       <h3 className="text-2xl sm:text-3xl font-bold mb-8 text-gray-800 dark:text-white">
-        {language === 'da' ? 'Programmeringssprog' : 'Programming Languages'}
+        {language === 'da' ? 'Teknlologier og Sprog' : 'Technologies and Languages'}
       </h3>
       
       <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-[350px] sm:max-w-[450px] lg+:max-w-[700px] transition-all duration-300">
         {language === 'da' 
-          ? 'Herunder kan du se de programmeringssprog og teknologier, som jeg har erfaring med, gennem min uddannelse og personlige projekter. Dem, der står først, er de, jeg har mest erfaring med.' 
-          : 'Below you can see the programming languages and technologies that I have experience with through my education and personal projects. The ones listed first are the ones I have the most experience with.'}
+          ? 'Herunder kan du se de programmeringssprog, frameworks og teknologier, som jeg har erfaring med, gennem min uddannelse og personlige projekter. Dem, der står først, er de, jeg har mest erfaring med.' 
+          : 'Below you can see the programming languages, frameworks, and technologies that I have experience with through my education and personal projects. The ones listed first are the ones I have the most experience with.'}
       </p>
 
       {/* Display programming languages in a grid */}

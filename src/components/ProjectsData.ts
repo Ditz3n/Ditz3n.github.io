@@ -45,6 +45,17 @@ import portfolio3 from '../assets/project/portfolio/portfolio3.png'
 import portfolio4 from '../assets/project/portfolio/portfolio4.png'
 import portfolio5 from '../assets/project/portfolio/portfolio5.png'
 
+// Clarity images
+import clarity1 from '../assets/project/clarity/clarity_1.png'
+import clarity2 from '../assets/project/clarity/clarity_2.png'
+import clarity3 from '../assets/project/clarity/clarity_3.png'
+import clarity4 from '../assets/project/clarity/clarity_4.png'
+import clarity5 from '../assets/project/clarity/clarity_5.png'
+import clarity6 from '../assets/project/clarity/clarity_6.png'
+import clarity7 from '../assets/project/clarity/clarity_7.png'
+import clarity8 from '../assets/project/clarity/clarity_8.png'
+import clarity9 from '../assets/project/clarity/clarity_9.png'
+
 // Exporting the interface for the projects
 export interface Project {
     title: { en: string; da: string };
@@ -73,6 +84,20 @@ export const projectsData: Project[] = [
       languages: [ 'react', 'typescript', 'css', ],
       tools: [],
       github: 'https://github.com/Ditz3n/Portfolio-1.0',
+    },
+    {
+      title: {
+        da: 'Clarity',
+        en: 'Clarity',
+      },
+      description: {
+        en: 'Clarity is a web application that helps users to keep track of their daily tasks and goals.',
+        da: 'Clarity er en webapplikation, der hjælper brugere med at holde styr på deres daglige opgaver og mål.',
+      },
+      images: [clarity1, clarity2, clarity3, clarity4, clarity5, clarity6, clarity7, clarity8, clarity9],
+      languages: ['react', 'typescript', 'css', 'tailwindcss', 'next.js'],
+      tools: [ 'figma' ],
+      github: 'https://github.com/Ditz3n/Clarity',
     },
     {
       title: {

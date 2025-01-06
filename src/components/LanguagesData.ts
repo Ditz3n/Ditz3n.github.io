@@ -12,6 +12,9 @@ import mongodbLogo from '../assets/logos/mongodb_logo.png';
 import sqlLogo from '../assets/logos/sql_logo.png';
 import cLogo from '../assets/logos/c_logo.png';
 import assemblyLogo from '../assets/logos/assembly_logo.png';
+import nextjslogo from '../assets/logos/nextjs_logo.png';
+import prismalogo from '../assets/logos/prisma_logo.png';
+import tailwindcss from '../assets/logos/tailwindcss_logo.png';
 
 // Exporting the interface for the programming languages
 export interface Language {
@@ -29,6 +32,10 @@ export const languageData: Language[] = [
     name: 'CSS',
     logoUrl: cssLogo
   },
+  {
+    name: 'Tailwind CSS',
+    logoUrl: tailwindcss
+  },
   { 
     name: 'HTML',
     logoUrl: htmlLogo
@@ -40,6 +47,10 @@ export const languageData: Language[] = [
   { 
     name: 'TypeScript',
     logoUrl: typescriptLogo
+  },
+  {
+    name: 'Next.js',
+    logoUrl: nextjslogo
   },
   { 
     name: 'C#',
@@ -60,6 +71,10 @@ export const languageData: Language[] = [
   { 
     name: 'MongoDB',
     logoUrl: mongodbLogo
+  },
+  { 
+    name: 'Prisma',
+    logoUrl: prismalogo
   },
   { 
     name: 'SQL',
