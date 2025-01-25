@@ -35,10 +35,10 @@ interface Course {
   
       // 4. semester
       { id: 'SW4BAD-01', name: { da: 'Back-end udvikling og databaser', en: 'Back-end Development and Databases' }, semester: 4, ects: 10, completed: true },
-      { id: 'SW4FED-02', name: { da: 'Front-end udvikling', en: 'Front-end Development' }, semester: 4, ects: 5, completed: false },
-      { id: 'SW4SWD-01', name: { da: 'Softwaredesign', en: 'Software Design' }, semester: 4, ects: 5, completed: false },
-      { id: 'SW4SWT-01', name: { da: 'Softwaretest', en: 'Software Testing' }, semester: 4, ects: 5, completed: false },
-      { id: 'SW4PRJ4-01', name: { da: 'Semesterprojekt 4', en: 'Semester Project 4' }, semester: 4, ects: 5, completed: false },
+      { id: 'SW4FED-02', name: { da: 'Front-end udvikling', en: 'Front-end Development' }, semester: 4, ects: 5, completed: true },
+      { id: 'SW4SWD-01', name: { da: 'Softwaredesign', en: 'Software Design' }, semester: 4, ects: 5, completed: true },
+      { id: 'SW4SWT-01', name: { da: 'Softwaretest', en: 'Software Testing' }, semester: 4, ects: 5, completed: true },
+      { id: 'SW4PRJ4-01', name: { da: 'Semesterprojekt 4', en: 'Semester Project 4' }, semester: 4, ects: 5, completed: true },
   
       // 5. semester
       { id: 'ESPRJ-01', name: { da: 'Ingeniørpraktik', en: 'Engineering Internship' }, semester: 5, ects: 30, completed: false },
